@@ -1,0 +1,225 @@
+{
+ "run_id": "run_20260928-103529",
+ "created": "2026-09-28T10:35:47",
+ "input_file": "sc_inputs.xlsx",
+ "input_sha256": "c1bf2ee2d9a199e1b41ab9bc55253679f98521d772c0aba062a9a3f1666f3fe3",
+ "base_seed": 20260928,
+ "variants": {
+  "beer_base": {
+   "model": "beer",
+   "description": "Base inputs",
+   "overrides": []
+  },
+  "inventory_base": {
+   "model": "inventory",
+   "description": "Base inputs",
+   "overrides": []
+  },
+  "pooling_base": {
+   "model": "pooling",
+   "description": "Base inputs",
+   "overrides": []
+  },
+  "beer_rational": {
+   "model": "beer",
+   "description": "Supply line fully accounted for (beta = 1)",
+   "overrides": [
+    [
+     "beta",
+     1.0
+    ]
+   ]
+  },
+  "beer_info_sharing": {
+   "model": "beer",
+   "description": "Every echelon sees end-customer demand",
+   "overrides": [
+    [
+     "info_sharing",
+     1
+    ]
+   ]
+  },
+  "beer_short_delays": {
+   "model": "beer",
+   "description": "All delays cut to one week",
+   "overrides": [
+    [
+     "order_delay",
+     1
+    ],
+    [
+     "ship_delay",
+     1
+    ],
+    [
+     "production_delay",
+     1
+    ]
+   ]
+  },
+  "beer_random_demand": {
+   "model": "beer",
+   "description": "Noisy customer demand, 20 replications",
+   "overrides": [
+    [
+     "demand_noise_sd",
+     2.0
+    ],
+    [
+     "replications",
+     20
+    ]
+   ]
+  },
+  "inventory_no_safety_stock": {
+   "model": "inventory",
+   "description": "Reorder point equals mean lead-time demand",
+   "overrides": [
+    [
+     "reorder_point",
+     100.0
+    ]
+   ]
+  },
+  "inventory_high_service": {
+   "model": "inventory",
+   "description": "Higher reorder point (z about 2.35)",
+   "overrides": [
+    [
+     "reorder_point",
+     135.0
+    ]
+   ]
+  },
+  "inventory_periodic": {
+   "model": "inventory",
+   "description": "Weekly review, order up to S",
+   "overrides": [
+    [
+     "policy",
+     "RS"
+    ]
+   ]
+  },
+  "inventory_variable_lead": {
+   "model": "inventory",
+   "description": "Lead time varies (sd 2 days), same reorder point",
+   "overrides": [
+    [
+     "lead_time_sd",
+     2.0
+    ]
+   ]
+  },
+  "pooling_correlated": {
+   "model": "pooling",
+   "description": "Regional demand strongly correlated (0.8)",
+   "overrides": [
+    [
+     "correlation",
+     0.8
+    ]
+   ]
+  },
+  "pooling_high_variability": {
+   "model": "pooling",
+   "description": "More volatile demand (sd 10)",
+   "overrides": [
+    [
+     "demand_sd",
+     10.0
+    ]
+   ]
+  },
+  "pooling_eight_regions": {
+   "model": "pooling",
+   "description": "Eight regions instead of four",
+   "overrides": [
+    [
+     "regions",
+     8
+    ]
+   ]
+  }
+ },
+ "parameter_sources": {
+  "beer": {
+   "weeks": "Placeholder teaching value",
+   "initial_inventory": "Typical board-game setting; verify against the version you teach",
+   "initial_flow": "Typical board-game setting; verify against the version you teach",
+   "desired_inventory": "Placeholder teaching value",
+   "demand_before": "Typical board-game setting; verify against the version you teach",
+   "demand_after": "Typical board-game setting; verify against the version you teach",
+   "step_week": "Typical board-game setting; verify against the version you teach",
+   "demand_noise_sd": "Placeholder teaching value",
+   "order_delay": "Typical board-game setting; verify against the version you teach",
+   "ship_delay": "Typical board-game setting; verify against the version you teach",
+   "production_delay": "Typical board-game setting; verify against the version you teach",
+   "theta": "Sterman (1989) average estimates as commonly cited; verify before quoting",
+   "alpha_s": "Sterman (1989) average estimates as commonly cited; verify before quoting",
+   "beta": "Sterman (1989) average estimates as commonly cited; verify before quoting",
+   "info_sharing": "Placeholder teaching value",
+   "holding_cost": "Typical board-game setting; verify against the version you teach",
+   "backlog_cost": "Typical board-game setting; verify against the version you teach",
+   "replications": "Placeholder teaching value"
+  },
+  "inventory": {
+   "days": "Placeholder teaching value",
+   "warmup_days": "Placeholder teaching value",
+   "demand_mean": "Placeholder teaching value",
+   "demand_sd": "Placeholder teaching value",
+   "lead_time_mean": "Placeholder teaching value",
+   "lead_time_sd": "Placeholder teaching value",
+   "policy": "Placeholder teaching value",
+   "reorder_point": "Placeholder teaching value",
+   "order_qty": "Placeholder teaching value",
+   "review_period": "Placeholder teaching value",
+   "order_up_to": "Placeholder teaching value",
+   "holding_cost": "Placeholder teaching value",
+   "order_cost": "Placeholder teaching value",
+   "backorder_cost": "Placeholder teaching value",
+   "replications": "Placeholder teaching value"
+  },
+  "pooling": {
+   "days": "Placeholder teaching value",
+   "warmup_days": "Placeholder teaching value",
+   "regions": "Placeholder teaching value",
+   "demand_mean": "Placeholder teaching value",
+   "demand_sd": "Placeholder teaching value",
+   "correlation": "Placeholder teaching value",
+   "lead_time": "Placeholder teaching value",
+   "service_z": "Placeholder teaching value",
+   "order_qty": "Placeholder teaching value",
+   "central_transit_days": "Placeholder teaching value",
+   "holding_cost": "Placeholder teaching value",
+   "replications": "Placeholder teaching value"
+  }
+ },
+ "software": {
+  "scsim": "0.1.0",
+  "python": "3.12.3",
+  "simpy": "4.1.2",
+  "numpy": "2.4.4",
+  "pandas": "3.0.2"
+ },
+ "files": [
+  "kpi_replications.csv",
+  "kpi_summary.csv",
+  "period_data_beer_base.csv",
+  "period_data_beer_info_sharing.csv",
+  "period_data_beer_random_demand.csv",
+  "period_data_beer_rational.csv",
+  "period_data_beer_short_delays.csv",
+  "period_data_inventory_base.csv",
+  "period_data_inventory_high_service.csv",
+  "period_data_inventory_no_safety_stock.csv",
+  "period_data_inventory_periodic.csv",
+  "period_data_inventory_variable_lead.csv",
+  "period_data_pooling_base.csv",
+  "period_data_pooling_correlated.csv",
+  "period_data_pooling_eight_regions.csv",
+  "period_data_pooling_high_variability.csv",
+  "sc_inputs.xlsx"
+ ]
+}

@@ -1,0 +1,103 @@
+{
+ "generated": "20260928-103529",
+ "traces": [
+  {
+   "file": "beer_base.json",
+   "variant": "beer_base",
+   "model": "beer",
+   "model_title": "Beer game",
+   "description": "Base inputs"
+  },
+  {
+   "file": "inventory_base.json",
+   "variant": "inventory_base",
+   "model": "inventory",
+   "model_title": "Inventory policy",
+   "description": "Base inputs"
+  },
+  {
+   "file": "pooling_base.json",
+   "variant": "pooling_base",
+   "model": "pooling",
+   "model_title": "Risk pooling",
+   "description": "Base inputs"
+  },
+  {
+   "file": "beer_rational.json",
+   "variant": "beer_rational",
+   "model": "beer",
+   "model_title": "Beer game",
+   "description": "Supply line fully accounted for (beta = 1)"
+  },
+  {
+   "file": "beer_info_sharing.json",
+   "variant": "beer_info_sharing",
+   "model": "beer",
+   "model_title": "Beer game",
+   "description": "Every echelon sees end-customer demand"
+  },
+  {
+   "file": "beer_short_delays.json",
+   "variant": "beer_short_delays",
+   "model": "beer",
+   "model_title": "Beer game",
+   "description": "All delays cut to one week"
+  },
+  {
+   "file": "beer_random_demand.json",
+   "variant": "beer_random_demand",
+   "model": "beer",
+   "model_title": "Beer game",
+   "description": "Noisy customer demand, 20 replications"
+  },
+  {
+   "file": "inventory_no_safety_stock.json",
+   "variant": "inventory_no_safety_stock",
+   "model": "inventory",
+   "model_title": "Inventory policy",
+   "description": "Reorder point equals mean lead-time demand"
+  },
+  {
+   "file": "inventory_high_service.json",
+   "variant": "inventory_high_service",
+   "model": "inventory",
+   "model_title": "Inventory policy",
+   "description": "Higher reorder point (z about 2.35)"
+  },
+  {
+   "file": "inventory_periodic.json",
+   "variant": "inventory_periodic",
+   "model": "inventory",
+   "model_title": "Inventory policy",
+   "description": "Weekly review, order up to S"
+  },
+  {
+   "file": "inventory_variable_lead.json",
+   "variant": "inventory_variable_lead",
+   "model": "inventory",
+   "model_title": "Inventory policy",
+   "description": "Lead time varies (sd 2 days), same reorder point"
+  },
+  {
+   "file": "pooling_correlated.json",
+   "variant": "pooling_correlated",
+   "model": "pooling",
+   "model_title": "Risk pooling",
+   "description": "Regional demand strongly correlated (0.8)"
+  },
+  {
+   "file": "pooling_high_variability.json",
+   "variant": "pooling_high_variability",
+   "model": "pooling",
+   "model_title": "Risk pooling",
+   "description": "More volatile demand (sd 10)"
+  },
+  {
+   "file": "pooling_eight_regions.json",
+   "variant": "pooling_eight_regions",
+   "model": "pooling",
+   "model_title": "Risk pooling",
+   "description": "Eight regions instead of four"
+  }
+ ]
+}
